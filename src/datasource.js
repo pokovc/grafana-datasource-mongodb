@@ -3,6 +3,7 @@ import _ from "lodash";
 export class GenericDatasource {
 
   constructor(instanceSettings, $q, backendSrv, templateSrv) {
+    console.log(instanceSettings);
     this.type = instanceSettings.type;
     this.url = instanceSettings.url;
     this.name = instanceSettings.name;
@@ -112,7 +113,7 @@ export class GenericDatasource {
         target: this.templateSrv.replace(target.target, options.scopedVars, ''),
         refId: target.refId,
         hide: target.hide,
-        type: target.type || 'timeserie'      
+        type: target.type || 'timeserie'
       };
     });
 
